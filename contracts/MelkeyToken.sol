@@ -17,4 +17,8 @@ contract MelkeyToken is ERC20("MelkeyToken", "MELK"), Ownable {
     function getOwner() external returns(address) {
         return msg.sender;
     }
+
+    function supplyVendor(address _vendor, uint256 _amount) external onlyOwner{
+        _mint(_vendor, _amount);
+    }
 }
